@@ -88,7 +88,7 @@ XML 的價值在於把不同意義的內容分區，讓 Agent 比較不容易把
 
 ## 7. Inspect-only 模板
 
-用途：只讀取與理解專案，不得修改檔案。完整檔案：`prompts/01-inspect-only.xml`。
+用途：只讀取與理解專案，不得修改檔案。此處為摘要範例，完整可複製模板請使用 `prompts/01-inspect-only.xml`。
 
 ```xml
 <prompt>
@@ -103,7 +103,7 @@ XML 的價值在於把不同意義的內容分區，讓 Agent 比較不容易把
 
 ## 8. Plan-only 模板
 
-用途：只提出實作計畫，不得修改檔案。完整檔案：`prompts/02-plan-only.xml`。
+用途：只提出實作計畫，不得修改檔案。此處為摘要範例，完整可複製模板請使用 `prompts/02-plan-only.xml`。
 
 ```xml
 <prompt>
@@ -116,7 +116,7 @@ XML 的價值在於把不同意義的內容分區，讓 Agent 比較不容易把
 
 ## 9. Patch 模板
 
-用途：在批准後執行小範圍修改。完整檔案：`prompts/03-patch.xml`。
+用途：在批准後執行小範圍修改。此處為摘要範例，完整可複製模板請使用 `prompts/03-patch.xml`。
 
 ```xml
 <prompt>
@@ -131,7 +131,7 @@ XML 的價值在於把不同意義的內容分區，讓 Agent 比較不容易把
 
 ## 10. Debug 模板
 
-用途：根據錯誤訊息定位問題，不要一開始就亂改。完整檔案：`prompts/04-debug.xml`。
+用途：根據錯誤訊息定位問題，不要一開始就亂改。此處為摘要範例，完整可複製模板請使用 `prompts/04-debug.xml`。
 
 ```xml
 <prompt>
@@ -144,7 +144,7 @@ XML 的價值在於把不同意義的內容分區，讓 Agent 比較不容易把
 
 ## 11. Test generation 模板
 
-用途：產生測試案例。完整檔案：`prompts/05-test-generation.xml`。
+用途：產生測試案例。此處為摘要範例，完整可複製模板請使用 `prompts/05-test-generation.xml`。
 
 ```xml
 <prompt>
@@ -158,7 +158,7 @@ XML 的價值在於把不同意義的內容分區，讓 Agent 比較不容易把
 
 ## 12. Documentation 模板
 
-用途：產生文件與報告。完整檔案：`prompts/06-documentation.xml`。
+用途：產生文件與報告。此處為摘要範例，完整可複製模板請使用 `prompts/06-documentation.xml`。
 
 ```xml
 <prompt>

@@ -23,6 +23,40 @@
 | 專題小組 | 建立團隊協作規則、分支流程、測試流程與 Agent 任務邊界。 |
 | 工具建置者 | 建置 Agent 工具、MCP、Skills、本地模型與測試環境。 |
 
+## 5 分鐘 Quick Start
+
+第一次拿到這份 repo 的同學，可以先照這個最小流程做：
+
+1. 先讀完本 README，確認這份資料包的用途與限制。
+2. 在自己的專案中確認 Git 狀態：
+
+```bash
+git status
+```
+
+3. 使用 Agent 前，先保存目前進度：
+
+```bash
+git add .
+git commit -m "Save current work before agent changes"
+```
+
+4. 為本次 Agent 任務開 branch：
+
+```bash
+git switch -c agent-task/example-task
+```
+
+5. 複製 `prompts/01-inspect-only.xml`，先要求 Agent 只 inspect，不要修改檔案。
+6. 若後續批准 Agent 修改，修改後一定要檢查：
+
+```bash
+git status
+git diff
+```
+
+7. 不要讓 Agent 直接 push 到 `main`。需要同步到 GitHub 時，先 review，再由人類決定是否 push branch 或開 pull request。
+
 ## 如果你是教授
 
 建議閱讀順序：
@@ -123,8 +157,25 @@
 | XML semantic constraints | 用結構化 prompt 限制任務範圍、輸入、輸出與禁止事項。 |
 | Context / memory management | 控制 Agent 可用脈絡，避免 context window overflow、過期記憶或未審查資訊影響結果。 |
 
-## TODO
+## 簡短 Glossary
 
-- [ ] 逐份補齊文件正文。
-- [ ] 補充官方資料來源與查證紀錄。
-- [ ] 補齊 XML prompt 範例內容。
+| 術語 | 說明 |
+| --- | --- |
+| AI Agent | 能根據任務讀取脈絡、提出計畫、使用工具或協助修改的 AI 系統。 |
+| Human-led Architecture | 人類主導需求、架構、批准、驗證與責任；Agent 只在受限範圍內協助。 |
+| Prompt Engineering | 把任務、限制、背景、輸出格式與驗證方式寫清楚的規格化過程。 |
+| XML semantic constraints | 用 XML 標籤區分任務、範圍、禁止事項、測試與輸出，降低任務模糊度。 |
+| Invariants | 修改前後都不能被破壞的不變條件，例如 API contract、資料格式、權限規則。 |
+| Edge Cases | 邊界條件與錯誤案例，例如空值、權限不足、重複資料、外部服務失敗。 |
+| Test Harness | 用來驗證修改結果的測試、檢查指令或可重現流程。 |
+| Context Window | Agent 單次可處理的對話與檔案脈絡容量。 |
+| Memory Governance | 管理硬體記憶體、context、長期專案記憶與過期資訊的治理方式。 |
+| MCP | Model Context Protocol，讓 Agent 連接外部工具、資料或服務的協定。 |
+| Skills | 可重用的 Agent 能力或流程封裝。 |
+| AGENTS.md | repo 內給 Agent 讀的專案規則檔。 |
+| Git diff review | 使用 `git diff` 檢查 Agent 實際修改內容的人工審查流程。 |
+
+## 後續維護事項
+
+- 補充 `references/source-notes.md` 的官方資料來源與查證日期。
+- 依課堂需求調整 examples/ 內的治理檔範例。
