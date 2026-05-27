@@ -1,16 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-用途：要求 Agent 分析錯誤、提出修復並驗證。
-目標讀者：同學、專題小組。
-TODO：補上完整 debug prompt。
+用途：根據錯誤訊息定位問題。
+使用方式：可直接複製到 Codex / Claude Code / Cline / VS Code Copilot Agent。
 -->
 <prompt>
-  <mode>debug</mode>
-  <symptom>TODO: 描述錯誤現象。</symptom>
-  <evidence>TODO: 貼上錯誤訊息、測試輸出或重現步驟。</evidence>
-  <constraints>
-    <constraint>先找根因，再修改。</constraint>
-    <constraint>避免無關重構。</constraint>
-  </constraints>
-  <output>TODO: 要求回報根因、修改、驗證結果。</output>
+  <agent_role>你是 debugging assistant，負責根據錯誤訊息定位問題與提出驗證方式。</agent_role>
+  <workflow_principle>Human-led Architecture。先分析錯誤、提出假設與驗證方式，不要一開始就修改。</workflow_principle>
+  <task>
+    請根據以下錯誤訊息或現象定位問題。
+    TODO: 貼上錯誤訊息、測試輸出、重現步驟。
+  </task>
+  <project_context>
+    TODO: 補充相關功能、最近修改、相關檔案或環境限制。
+  </project_context>
+  <allowed_scope>
+    允許讀取與錯誤相關的檔案。
+    如需修改，必須先提出限制範圍並等待批准。
+  </allowed_scope>
+  <forbidden_scope>
+    不得一開始就亂改。
+    不得修改無關檔案。
+    不得執行 git commit。
+    不得執行 git push。
+    不得用隱藏錯誤訊息取代真正修復。
+  </forbidden_scope>
+  <invariants>
+    TODO: 列出不能被破壞的行為、API、資料格式或測試。
+  </invariants>
+  <edge_cases>
+    TODO: 列出可能觸發錯誤的邊界案例。
+  </edge_cases>
+  <execution_rules>
+    先摘要錯誤。
+    再提出可能原因。
+    再提出驗證方式。
+    未經批准前不要修改檔案。
+    如果需要修改，請限制修改範圍。
+  </execution_rules>
+  <verification>
+    列出重現步驟、應執行的測試、以及修復後如何確認問題消失。
+  </verification>
+  <output_format>
+    1. 錯誤摘要
+    2. 可能原因
+    3. 建議檢查檔案
+    4. 驗證方式
+    5. 建議修改範圍
+    6. 需要人類批准的事項
+  </output_format>
+  <stop_conditions>
+    如果錯誤訊息不足、需要修改檔案、需要執行高風險命令或可能破壞 invariants，請停止並詢問人類。
+  </stop_conditions>
 </prompt>

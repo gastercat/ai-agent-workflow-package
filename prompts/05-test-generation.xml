@@ -1,16 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-用途：要求 Agent 產生或補強測試。
-目標讀者：同學、專題小組。
-TODO：補上完整 test-generation prompt。
+用途：產生測試案例。
+使用方式：可直接複製到 Codex / Claude Code / Cline / VS Code Copilot Agent。
 -->
 <prompt>
-  <mode>test-generation</mode>
-  <target>TODO: 描述要測試的功能或檔案。</target>
-  <requirements>
-    <requirement>TODO: 正常案例。</requirement>
-    <requirement>TODO: edge cases。</requirement>
-    <requirement>TODO: 錯誤案例。</requirement>
-  </requirements>
-  <output>TODO: 要求回報新增測試與執行結果。</output>
+  <agent_role>你是 test generation assistant，負責產生可審查的測試案例。</agent_role>
+  <workflow_principle>Human-led Architecture。測試用來驗證行為，不是為了配合錯誤實作。</workflow_principle>
+  <task>
+    請為以下功能或檔案產生測試案例。
+    TODO: 描述要測試的功能、檔案或 bug。
+  </task>
+  <project_context>
+    TODO: 補充測試框架、目前測試位置、功能需求與已知限制。
+  </project_context>
+  <allowed_scope>
+    允許讀取 production code 與現有測試。
+    TODO: 明確列出允許新增或修改的測試檔案。
+  </allowed_scope>
+  <forbidden_scope>
+    不得為了通過測試而修改 production code，除非另行批准。
+    不得刪除既有測試。
+    不得降低測試強度。
+    不得執行 git commit。
+    不得執行 git push。
+  </forbidden_scope>
+  <invariants>
+    TODO: 列出功能必須維持的行為、API contract、資料格式。
+  </invariants>
+  <edge_cases>
+    必須包含正常案例。
+    必須包含 edge cases。
+    必須包含錯誤案例。
+    TODO: 補充空值、權限不足、重複資料、網路失敗等情境。
+  </edge_cases>
+  <execution_rules>
+    先列出測試計畫。
+    再產生測試。
+    測試命名要能看出情境。
+    不要讓測試依賴不穩定外部服務，除非人類批准。
+  </execution_rules>
+  <verification>
+    請執行測試；如果無法執行，請說明原因與應執行的測試指令。
+  </verification>
+  <output_format>
+    1. 測試目標
+    2. 測試案例清單
+    3. 新增或修改的測試檔案
+    4. 覆蓋的 edge cases
+    5. 測試執行結果或建議指令
+    6. 尚未覆蓋的風險
+  </output_format>
+  <stop_conditions>
+    如果需要修改 production code、刪除既有測試或無法確認需求，請停止並詢問人類。
+  </stop_conditions>
 </prompt>

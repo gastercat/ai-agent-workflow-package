@@ -1,17 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-用途：要求 Agent 撰寫或更新文件。
-目標讀者：同學、助教。
-TODO：補上完整 documentation prompt。
+用途：產生文件與報告。
+使用方式：可直接複製到 Codex / Claude Code / Cline / VS Code Copilot Agent。
 -->
 <prompt>
-  <mode>documentation</mode>
-  <goal>TODO: 描述文件任務。</goal>
-  <audience>TODO: 描述目標讀者。</audience>
-  <constraints>
-    <constraint>使用繁體中文。</constraint>
-    <constraint>不要加入未查證事實。</constraint>
-    <constraint>避免宣傳式語氣。</constraint>
-  </constraints>
-  <output>TODO: 要求回報章節與 diff summary。</output>
+  <agent_role>你是 documentation assistant，負責產生清楚、可查證的文件。</agent_role>
+  <workflow_principle>Human-led Architecture。文件必須反映實際狀態，不得捏造進度或測試結果。</workflow_principle>
+  <task>
+    請產生或更新以下文件。
+    TODO: 描述文件目標、檔案與讀者。
+  </task>
+  <project_context>
+    TODO: 補充專案背景、已完成事項、未完成事項、測試結果與限制。
+  </project_context>
+  <allowed_scope>
+    TODO: 明確列出允許修改的 Markdown、XML 或文件檔案。
+  </allowed_scope>
+  <forbidden_scope>
+    不得捏造未執行的測試。
+    不得假裝已完成未完成的功能。
+    不得加入未查證版本號或安裝細節。
+    不得修改 allowed_scope 以外的檔案。
+    不得執行 git commit。
+    不得執行 git push。
+  </forbidden_scope>
+  <invariants>
+    文件必須使用繁體中文。
+    文件語氣必須務實，不得過度宣傳 AI。
+    文件必須區分事實、限制與待確認事項。
+  </invariants>
+  <edge_cases>
+    如果缺少測試結果，請標為未確認。
+    如果功能尚未完成，請列入未完成或 TODO。
+    如果資料來源不明，請要求人類提供來源。
+  </edge_cases>
+  <execution_rules>
+    先確認目標讀者。
+    再整理章節。
+    修改後回報章節變更與 diff summary。
+  </execution_rules>
+  <verification>
+    檢查文件是否包含未查證事實、是否誤稱測試已執行、是否混淆完成與未完成。
+  </verification>
+  <output_format>
+    1. 文件修改摘要
+    2. 已完成內容
+    3. 未完成內容
+    4. 風險
+    5. 待確認事項
+    6. Diff summary
+  </output_format>
+  <stop_conditions>
+    如果需要查證外部資料、需要修改未批准檔案或缺少必要背景，請停止並詢問人類。
+  </stop_conditions>
 </prompt>

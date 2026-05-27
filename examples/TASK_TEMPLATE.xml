@@ -1,21 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-文件用途：示範單一 Agent 任務可以如何用 XML 描述。
-目標讀者：同學、專題小組。
-TODO：後續補上完整任務欄位與限制說明。
+通用任務卡模板。
+用途：讓同學或專題小組在交給 Agent 前，先明確定義任務、範圍、限制、驗證與人工審查項目。
 -->
-<task>
-  <purpose>TODO: 描述任務用途。</purpose>
-  <audience>TODO: 描述目標讀者。</audience>
-  <scope>
-    <allowed>TODO: 列出允許修改或分析的範圍。</allowed>
-    <forbidden>TODO: 列出禁止事項。</forbidden>
-  </scope>
-  <steps>
-    <step>TODO: inspect</step>
-    <step>TODO: plan</step>
-    <step>TODO: patch</step>
-    <step>TODO: verify</step>
-  </steps>
-  <reporting>TODO: 要求回報 diff summary 與驗證結果。</reporting>
-</task>
+<task_card>
+  <task_id>TODO: 例如 TASK-001</task_id>
+  <title>TODO: 任務標題</title>
+  <owner>TODO: 負責同學或小組名稱</owner>
+  <status>TODO: draft | approved | in_progress | review | done</status>
+
+  <goal>
+    TODO: 說明這次任務要達成什麼，不要寫成「完成整個專案」。
+  </goal>
+
+  <background>
+    TODO: 補充專案背景、目前狀態、相關檔案、錯誤訊息或課堂要求。
+  </background>
+
+  <allowed_scope>
+    <read>TODO: 允許讀取的檔案或資料夾。</read>
+    <write>TODO: 允許修改或新增的檔案。</write>
+    <commands>TODO: 允許執行的非破壞性命令。</commands>
+  </allowed_scope>
+
+  <forbidden_scope>
+    <item>不得修改未列入 allowed_scope 的檔案。</item>
+    <item>不得刪除檔案，除非人類明確批准。</item>
+    <item>不得執行 git commit。</item>
+    <item>不得執行 git push。</item>
+    <item>不得提交 API key、.env、密碼或私人資料。</item>
+  </forbidden_scope>
+
+  <invariants>
+    <item>TODO: API contract 不可破壞。</item>
+    <item>TODO: 資料格式不可改變。</item>
+    <item>TODO: 權限檢查不可移除。</item>
+  </invariants>
+
+  <edge_cases>
+    <item>TODO: 空輸入。</item>
+    <item>TODO: 權限不足。</item>
+    <item>TODO: 重複資料。</item>
+    <item>TODO: 網路或外部服務失敗。</item>
+  </edge_cases>
+
+  <verification>
+    <test_plan>TODO: 要執行或補上的測試。</test_plan>
+    <manual_check>TODO: 人工檢查步驟。</manual_check>
+    <expected_result>TODO: 預期結果。</expected_result>
+  </verification>
+
+  <expected_output>
+    <item>任務理解摘要。</item>
+    <item>實作或修改計畫。</item>
+    <item>修改後 diff summary。</item>
+    <item>測試或檢查結果。</item>
+    <item>未解決風險與待確認事項。</item>
+  </expected_output>
+
+  <human_review_checklist>
+    <item>我已確認 Agent 沒有超出 allowed_scope。</item>
+    <item>我已閱讀 git diff。</item>
+    <item>我已確認 invariants 沒有被破壞。</item>
+    <item>我已檢查 edge cases。</item>
+    <item>我已執行或記錄測試方式。</item>
+    <item>我能解釋這次修改。</item>
+    <item>我沒有讓 Agent 自動 push main。</item>
+  </human_review_checklist>
+</task_card>

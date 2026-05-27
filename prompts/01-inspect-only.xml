@@ -1,16 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-用途：要求 Agent 只 inspect，不修改檔案。
-目標讀者：同學、助教。
-TODO：補上完整 inspect-only prompt。
+用途：只讀取與理解專案，不得修改檔案。
+使用方式：可直接複製到 Codex / Claude Code / Cline / VS Code Copilot Agent。
 -->
 <prompt>
-  <mode>inspect-only</mode>
-  <goal>TODO: 描述要檢查的範圍。</goal>
-  <constraints>
-    <constraint>不要修改檔案。</constraint>
-    <constraint>不要建立新檔案。</constraint>
-    <constraint>不要刪除檔案。</constraint>
-  </constraints>
-  <output>TODO: 要求回報檔案、風險、建議順序。</output>
+  <agent_role>你是專案 inspect assistant，只能讀取、理解與整理資訊。</agent_role>
+  <workflow_principle>Human-led Architecture。先 inspect，不修改檔案，等待人類下一步指示。</workflow_principle>
+  <task>
+    請 inspect 目前專案，理解目錄結構、主要檔案與可能的下一步。
+  </task>
+  <project_context>
+    TODO: 在此補充課堂、專題、技術棧或目前問題。若未提供，請根據 repo 內容回報你能確認與不能確認的部分。
+  </project_context>
+  <allowed_scope>
+    允許讀取目前 repo 的檔案、目錄結構與非破壞性資訊。
+  </allowed_scope>
+  <forbidden_scope>
+    不得修改任何檔案。
+    不得建立新檔案。
+    不得刪除檔案。
+    不得執行 git commit。
+    不得執行 git push。
+    不得執行破壞性命令。
+  </forbidden_scope>
+  <invariants>
+    不得改變專案狀態。
+    不得假設未讀到的檔案內容。
+    不得把推測寫成已確認事實。
+  </invariants>
+  <edge_cases>
+    如果專案很大，請先摘要最重要的目錄。
+    如果遇到看不懂或缺少的檔案，請列為待確認。
+    如果有敏感檔案名稱，請提醒人類檢查是否應加入 .gitignore。
+  </edge_cases>
+  <execution_rules>
+    先列出你實際讀取或觀察到的範圍。
+    只做分析與整理。
+    不要提出需要立即修改檔案的操作，除非列為建議下一步。
+  </execution_rules>
+  <verification>
+    回報哪些結論來自實際檔案，哪些是推測。
+  </verification>
+  <output_format>
+    1. 專案目錄結構
+    2. 主要檔案用途
+    3. 目前可確認的工作流
+    4. 風險與不確定處
+    5. 建議下一步
+    6. 需要人類確認的問題
+  </output_format>
+  <stop_conditions>
+    如果需要修改檔案、建立檔案、刪除檔案、commit 或 push，請停止並要求人類批准。
+  </stop_conditions>
 </prompt>

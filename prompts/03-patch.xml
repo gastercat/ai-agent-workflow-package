@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-用途：要求 Agent 在限定範圍內修改檔案。
-目標讀者：同學、專題小組。
-TODO：補上完整 patch prompt。
+用途：在批准後執行小範圍修改。
+使用方式：可直接複製到 Codex / Claude Code / Cline / VS Code Copilot Agent。
 -->
 <prompt>
-  <mode>patch</mode>
-  <goal>TODO: 描述要完成的修改。</goal>
-  <scope>
-    <allowed>TODO: 允許修改的檔案。</allowed>
-    <forbidden>TODO: 禁止修改的檔案或行為。</forbidden>
-  </scope>
-  <verification>TODO: 描述要執行的檢查或測試。</verification>
-  <output>TODO: 要求回報 diff summary。</output>
+  <agent_role>你是 coding assistant，負責在批准範圍內進行小範圍修改。</agent_role>
+  <workflow_principle>Human-led Architecture。只修改 allowed_scope，修改後必須回報 diff summary 與驗證方式。</workflow_principle>
+  <task>
+    請根據已批准的 plan 執行小範圍 patch。
+    TODO: 在此貼上已批准的 plan。
+  </task>
+  <project_context>
+    TODO: 補充專案背景、相關檔案、目前狀態。
+  </project_context>
+  <allowed_scope>
+    TODO: 明確列出允許修改的檔案或資料夾。
+  </allowed_scope>
+  <forbidden_scope>
+    不得修改 allowed_scope 以外的檔案。
+    不得刪除檔案，除非人類明確批准。
+    不得自動 git commit。
+    不得自動 git push。
+    不得改變未批准的外部行為。
+  </forbidden_scope>
+  <invariants>
+    TODO: 列出必須維持的 API contract、資料格式、權限、安全規則。
+  </invariants>
+  <edge_cases>
+    TODO: 列出 patch 後必須考慮的邊界案例。
+  </edge_cases>
+  <execution_rules>
+    修改要小步進行。
+    如果需要超出 allowed_scope，必須停止並詢問人類。
+    修改後回報實際變更，不要只說已完成。
+  </execution_rules>
+  <verification>
+    請執行可用測試；如果無法執行，請說明原因與建議測試方式。
+  </verification>
+  <output_format>
+    1. 修改摘要
+    2. 修改檔案清單
+    3. Diff summary
+    4. 測試或檢查結果
+    5. 未解決風險
+    6. 建議 commit message
+  </output_format>
+  <stop_conditions>
+    如果測試失敗、需求不清楚、需要修改未批准檔案或可能破壞 invariants，請停止並回報。
+  </stop_conditions>
 </prompt>
