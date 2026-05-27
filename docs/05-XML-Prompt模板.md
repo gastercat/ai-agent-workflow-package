@@ -173,6 +173,8 @@ XML 的價值在於把不同意義的內容分區，讓 Agent 比較不容易把
 
 用途：檢查 Agent 修改是否破壞 invariants、權限、安全或資料格式。
 
+此處為摘要範例；若要實際使用，請依照 `prompts/*.xml` 的完整結構補齊必要標籤。
+
 ```xml
 <prompt>
   <agent_role>你是 risk review assistant，負責審查 Agent 修改風險。</agent_role>
@@ -181,7 +183,7 @@ XML 的價值在於把不同意義的內容分區，讓 Agent 比較不容易把
     請檢查目前變更是否破壞 invariants、權限、安全、資料格式或測試假設。
   </task>
   <project_context>
-    TODO: 貼上專案背景、重要架構與目前 diff 摘要。
+    {請貼上專案背景、重要架構與目前 diff 摘要。}
   </project_context>
   <allowed_scope>
     允許讀取 diff、測試輸出、相關檔案與專案規則。
@@ -192,10 +194,10 @@ XML 的價值在於把不同意義的內容分區，讓 Agent 比較不容易把
     不得執行 git push。
   </forbidden_scope>
   <invariants>
-    TODO: 列出不能被破壞的 API contract、資料格式、權限規則。
+    {請列出不能被破壞的 API contract、資料格式與權限規則。}
   </invariants>
   <edge_cases>
-    TODO: 列出空值、權限不足、重複資料、網路失敗等情境。
+    {請列出空值、權限不足、重複資料、網路失敗等情境。}
   </edge_cases>
   <execution_rules>
     先列出風險，再列出需要人類確認的問題。
@@ -221,6 +223,8 @@ XML 的價值在於把不同意義的內容分區，讓 Agent 比較不容易把
 
 用途：要求 Agent 重構，但不得改變外部行為。
 
+此處為摘要範例；若要實際使用，請依照 `prompts/*.xml` 的完整結構補齊必要標籤。
+
 ```xml
 <prompt>
   <agent_role>你是 refactoring assistant，負責改善內部結構但不改變外部行為。</agent_role>
@@ -229,10 +233,10 @@ XML 的價值在於把不同意義的內容分區，讓 Agent 比較不容易把
     請針對指定範圍提出重構計畫，目標是提升可讀性、降低重複或改善結構。
   </task>
   <project_context>
-    TODO: 說明目前問題與相關檔案。
+    {請說明目前問題與相關檔案。}
   </project_context>
   <allowed_scope>
-    TODO: 只能分析或修改指定檔案。
+    {請列出只能分析或修改的指定檔案。}
   </allowed_scope>
   <forbidden_scope>
     不得改變 public API。
@@ -241,10 +245,10 @@ XML 的價值在於把不同意義的內容分區，讓 Agent 比較不容易把
     不得執行 git commit 或 git push。
   </forbidden_scope>
   <invariants>
-    TODO: 列出外部行為、API contract、測試必須維持的規則。
+    {請列出外部行為、API contract 與測試必須維持的規則。}
   </invariants>
   <edge_cases>
-    TODO: 列出重構後仍必須通過的邊界情境。
+    {請列出重構後仍必須通過的邊界情境。}
   </edge_cases>
   <execution_rules>
     先提出 plan；等待人類批准；修改必須小步進行。

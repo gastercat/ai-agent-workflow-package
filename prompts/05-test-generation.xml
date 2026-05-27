@@ -8,14 +8,14 @@
   <workflow_principle>Human-led Architecture。測試用來驗證行為，不是為了配合錯誤實作。</workflow_principle>
   <task>
     請為以下功能或檔案產生測試案例。
-    TODO: 描述要測試的功能、檔案或 bug。
+    {請描述要測試的功能、檔案或 bug。}
   </task>
   <project_context>
-    TODO: 補充測試框架、目前測試位置、功能需求與已知限制。
+    {請補充測試框架、目前測試位置、功能需求與已知限制。}
   </project_context>
   <allowed_scope>
     允許讀取 production code 與現有測試。
-    TODO: 明確列出允許新增或修改的測試檔案。
+    {請明確列出允許新增或修改的測試檔案。}
   </allowed_scope>
   <forbidden_scope>
     不得為了通過測試而修改 production code，除非另行批准。
@@ -25,13 +25,13 @@
     不得執行 git push。
   </forbidden_scope>
   <invariants>
-    TODO: 列出功能必須維持的行為、API contract、資料格式。
+    {請列出功能必須維持的行為、API contract 與資料格式。}
   </invariants>
   <edge_cases>
     必須包含正常案例。
     必須包含 edge cases。
     必須包含錯誤案例。
-    TODO: 補充空值、權限不足、重複資料、網路失敗等情境。
+    {請補充空值、權限不足、重複資料、網路失敗等情境。}
   </edge_cases>
   <execution_rules>
     先列出測試計畫。

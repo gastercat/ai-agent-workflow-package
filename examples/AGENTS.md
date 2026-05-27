@@ -2,7 +2,7 @@
 
 ## 專案目標
 
-本專案目標：TODO: 簡短描述專案要解決的問題、主要使用者與交付成果。
+本專案目標：{請填入專案要解決的問題、主要使用者與交付成果。範例：建立一個課堂專題管理工具，協助小組追蹤任務、繳交進度與整理報告。}
 
 Agent 可以協助 inspect、plan、patch、debug、test generation 與 documentation，但不得取代人類對需求、架構、驗證與最終提交的判斷。
 
@@ -77,14 +77,14 @@ Agent 可以協助 inspect、plan、patch、debug、test generation 與 document
 
 ```markdown
 ## Summary
-- TODO
+- {請摘要本次完成或觀察到的事項}
 
 ## Changed Files
-- TODO
+- {請列出修改檔案；若未修改，請寫「無」}
 
 ## Verification
-- TODO
+- {請列出已執行測試、檢查或無法執行的原因}
 
 ## Risks / Follow-up
-- TODO
+- {請列出未解決風險、限制與需要人類確認的事項}
 ```

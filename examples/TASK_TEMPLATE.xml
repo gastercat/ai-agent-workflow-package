@@ -4,23 +4,23 @@
 用途：讓同學或專題小組在交給 Agent 前，先明確定義任務、範圍、限制、驗證與人工審查項目。
 -->
 <task_card>
-  <task_id>TODO: 例如 TASK-001</task_id>
-  <title>TODO: 任務標題</title>
-  <owner>TODO: 負責同學或小組名稱</owner>
-  <status>TODO: draft | approved | in_progress | review | done</status>
+  <task_id>{範例：TASK-001}</task_id>
+  <title>{請填入任務標題}</title>
+  <owner>{請填入負責同學或小組名稱}</owner>
+  <status>{請填入狀態：draft | approved | in_progress | review | done}</status>
 
   <goal>
-    TODO: 說明這次任務要達成什麼，不要寫成「完成整個專案」。
+    {請說明這次任務要達成什麼；範例：新增登入表單驗證，不要寫成「完成整個專案」。}
   </goal>
 
   <background>
-    TODO: 補充專案背景、目前狀態、相關檔案、錯誤訊息或課堂要求。
+    {請補充專案背景、目前狀態、相關檔案、錯誤訊息或課堂要求。}
   </background>
 
   <allowed_scope>
-    <read>TODO: 允許讀取的檔案或資料夾。</read>
-    <write>TODO: 允許修改或新增的檔案。</write>
-    <commands>TODO: 允許執行的非破壞性命令。</commands>
+    <read>{請列出允許讀取的檔案或資料夾；範例：src/auth/、tests/auth/}</read>
+    <write>{請列出允許修改或新增的檔案；範例：src/auth/login.ts、tests/auth/login.test.ts}</write>
+    <commands>{請列出允許執行的非破壞性命令；範例：npm test、pytest}</commands>
   </allowed_scope>
 
   <forbidden_scope>
@@ -32,22 +32,22 @@
   </forbidden_scope>
 
   <invariants>
-    <item>TODO: API contract 不可破壞。</item>
-    <item>TODO: 資料格式不可改變。</item>
-    <item>TODO: 權限檢查不可移除。</item>
+    <item>{請依專案調整：API contract 不可破壞。}</item>
+    <item>{請依專案調整：資料格式不可改變。}</item>
+    <item>{請依專案調整：權限檢查不可移除。}</item>
   </invariants>
 
   <edge_cases>
-    <item>TODO: 空輸入。</item>
-    <item>TODO: 權限不足。</item>
-    <item>TODO: 重複資料。</item>
-    <item>TODO: 網路或外部服務失敗。</item>
+    <item>{請依任務調整：空輸入。}</item>
+    <item>{請依任務調整：權限不足。}</item>
+    <item>{請依任務調整：重複資料。}</item>
+    <item>{請依任務調整：網路或外部服務失敗。}</item>
   </edge_cases>
 
   <verification>
-    <test_plan>TODO: 要執行或補上的測試。</test_plan>
-    <manual_check>TODO: 人工檢查步驟。</manual_check>
-    <expected_result>TODO: 預期結果。</expected_result>
+    <test_plan>{請填入要執行或補上的測試；範例：npm test -- login}</test_plan>
+    <manual_check>{請填入人工檢查步驟；範例：用錯誤密碼登入應顯示安全錯誤訊息。}</manual_check>
+    <expected_result>{請填入預期結果；範例：所有登入驗證測試通過，既有 API response schema 不變。}</expected_result>
   </verification>
 
   <expected_output>

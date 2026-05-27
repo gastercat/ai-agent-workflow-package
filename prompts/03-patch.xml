@@ -8,13 +8,13 @@
   <workflow_principle>Human-led Architecture。只修改 allowed_scope，修改後必須回報 diff summary 與驗證方式。</workflow_principle>
   <task>
     請根據已批准的 plan 執行小範圍 patch。
-    TODO: 在此貼上已批准的 plan。
+    {請貼上已批准的 plan。}
   </task>
   <project_context>
-    TODO: 補充專案背景、相關檔案、目前狀態。
+    {請填入專案背景、相關檔案與目前狀態。}
   </project_context>
   <allowed_scope>
-    TODO: 明確列出允許修改的檔案或資料夾。
+    {請明確列出允許修改的檔案或資料夾。}
   </allowed_scope>
   <forbidden_scope>
     不得修改 allowed_scope 以外的檔案。
@@ -24,10 +24,10 @@
     不得改變未批准的外部行為。
   </forbidden_scope>
   <invariants>
-    TODO: 列出必須維持的 API contract、資料格式、權限、安全規則。
+    {請列出必須維持的 API contract、資料格式、權限與安全規則。}
   </invariants>
   <edge_cases>
-    TODO: 列出 patch 後必須考慮的邊界案例。
+    {請列出 patch 後必須考慮的邊界案例。}
   </edge_cases>
   <execution_rules>
     修改要小步進行。

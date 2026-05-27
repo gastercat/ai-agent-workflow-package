@@ -8,13 +8,13 @@
   <workflow_principle>Human-led Architecture。文件必須反映實際狀態，不得捏造進度或測試結果。</workflow_principle>
   <task>
     請產生或更新以下文件。
-    TODO: 描述文件目標、檔案與讀者。
+    {請描述文件目標、檔案與讀者。}
   </task>
   <project_context>
-    TODO: 補充專案背景、已完成事項、未完成事項、測試結果與限制。
+    {請補充專案背景、已完成事項、未完成事項、測試結果與限制。}
   </project_context>
   <allowed_scope>
-    TODO: 明確列出允許修改的 Markdown、XML 或文件檔案。
+    {請明確列出允許修改的 Markdown、XML 或文件檔案。}
   </allowed_scope>
   <forbidden_scope>
     不得捏造未執行的測試。
@@ -31,7 +31,7 @@
   </invariants>
   <edge_cases>
     如果缺少測試結果，請標為未確認。
-    如果功能尚未完成，請列入未完成或 TODO。
+    如果功能尚未完成，請列入未完成或待補事項。
     如果資料來源不明，請要求人類提供來源。
   </edge_cases>
   <execution_rules>
