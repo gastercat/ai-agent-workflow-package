@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+用途：要求 Agent 只提出計畫，不修改檔案。
+目標讀者：同學、助教。
+TODO：補上完整 plan-only prompt。
+-->
+<prompt>
+  <mode>plan-only</mode>
+  <goal>TODO: 描述要規劃的任務。</goal>
+  <constraints>
+    <constraint>不要修改檔案。</constraint>
+    <constraint>先列出假設與風險。</constraint>
+  </constraints>
+  <output>TODO: 要求回報步驟、影響檔案、驗證方式。</output>
+</prompt>

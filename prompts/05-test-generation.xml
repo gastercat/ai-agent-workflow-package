@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+用途：要求 Agent 產生或補強測試。
+目標讀者：同學、專題小組。
+TODO：補上完整 test-generation prompt。
+-->
+<prompt>
+  <mode>test-generation</mode>
+  <target>TODO: 描述要測試的功能或檔案。</target>
+  <requirements>
+    <requirement>TODO: 正常案例。</requirement>
+    <requirement>TODO: edge cases。</requirement>
+    <requirement>TODO: 錯誤案例。</requirement>
+  </requirements>
+  <output>TODO: 要求回報新增測試與執行結果。</output>
+</prompt>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+用途：要求 Agent 只 inspect，不修改檔案。
+目標讀者：同學、助教。
+TODO：補上完整 inspect-only prompt。
+-->
+<prompt>
+  <mode>inspect-only</mode>
+  <goal>TODO: 描述要檢查的範圍。</goal>
+  <constraints>
+    <constraint>不要修改檔案。</constraint>
+    <constraint>不要建立新檔案。</constraint>
+    <constraint>不要刪除檔案。</constraint>
+  </constraints>
+  <output>TODO: 要求回報檔案、風險、建議順序。</output>
+</prompt>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+文件用途：示範單一 Agent 任務可以如何用 XML 描述。
+目標讀者：同學、專題小組。
+TODO：後續補上完整任務欄位與限制說明。
+-->
+<task>
+  <purpose>TODO: 描述任務用途。</purpose>
+  <audience>TODO: 描述目標讀者。</audience>
+  <scope>
+    <allowed>TODO: 列出允許修改或分析的範圍。</allowed>
+    <forbidden>TODO: 列出禁止事項。</forbidden>
+  </scope>
+  <steps>
+    <step>TODO: inspect</step>
+    <step>TODO: plan</step>
+    <step>TODO: patch</step>
+    <step>TODO: verify</step>
+  </steps>
+  <reporting>TODO: 要求回報 diff summary 與驗證結果。</reporting>
+</task>

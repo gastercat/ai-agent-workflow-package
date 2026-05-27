@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+用途：要求 Agent 撰寫或更新文件。
+目標讀者：同學、助教。
+TODO：補上完整 documentation prompt。
+-->
+<prompt>
+  <mode>documentation</mode>
+  <goal>TODO: 描述文件任務。</goal>
+  <audience>TODO: 描述目標讀者。</audience>
+  <constraints>
+    <constraint>使用繁體中文。</constraint>
+    <constraint>不要加入未查證事實。</constraint>
+    <constraint>避免宣傳式語氣。</constraint>
+  </constraints>
+  <output>TODO: 要求回報章節與 diff summary。</output>
+</prompt>

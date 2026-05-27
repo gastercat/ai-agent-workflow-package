@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+用途：要求 Agent 在限定範圍內修改檔案。
+目標讀者：同學、專題小組。
+TODO：補上完整 patch prompt。
+-->
+<prompt>
+  <mode>patch</mode>
+  <goal>TODO: 描述要完成的修改。</goal>
+  <scope>
+    <allowed>TODO: 允許修改的檔案。</allowed>
+    <forbidden>TODO: 禁止修改的檔案或行為。</forbidden>
+  </scope>
+  <verification>TODO: 描述要執行的檢查或測試。</verification>
+  <output>TODO: 要求回報 diff summary。</output>
+</prompt>

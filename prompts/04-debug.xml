@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+用途：要求 Agent 分析錯誤、提出修復並驗證。
+目標讀者：同學、專題小組。
+TODO：補上完整 debug prompt。
+-->
+<prompt>
+  <mode>debug</mode>
+  <symptom>TODO: 描述錯誤現象。</symptom>
+  <evidence>TODO: 貼上錯誤訊息、測試輸出或重現步驟。</evidence>
+  <constraints>
+    <constraint>先找根因，再修改。</constraint>
+    <constraint>避免無關重構。</constraint>
+  </constraints>
+  <output>TODO: 要求回報根因、修改、驗證結果。</output>
+</prompt>
