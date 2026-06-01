@@ -93,12 +93,13 @@ git diff
 建議閱讀順序：
 
 1. `docs/04-建置指南.md`
-2. `docs/02-主文件-AI-Agent-Workflow導入說明.md`
-3. `docs/05-XML-Prompt模板.md`
-4. `examples/AGENTS.md`
-5. `examples/PROJECT_CONTEXT.md`
-6. `examples/INVARIANTS.md`
-7. `references/source-notes.md`
+2. `docs/local-coding-agent-opencode-ollama.md`
+3. `docs/02-主文件-AI-Agent-Workflow導入說明.md`
+4. `docs/05-XML-Prompt模板.md`
+5. `examples/AGENTS.md`
+6. `examples/PROJECT_CONTEXT.md`
+7. `examples/INVARIANTS.md`
+8. `references/source-notes.md`
 
 閱讀重點：
 
@@ -135,6 +136,8 @@ git diff
 | `prompts/` | 放置 XML prompt templates，例如 inspect-only、plan-only、patch、debug、test generation、documentation。 |
 
 `examples/` 用來定義專案規則與不可破壞的限制；`prompts/` 用來把單次 Agent 任務切成可檢查、可批准、可回報的步驟。
+
+補充教學：`docs/local-coding-agent-opencode-ollama.md` 說明如何用 OpenCode、Ollama 與本地 tool-capable coding model 建立備援型本機 coding agent 工作流。
 
 ## 建議導入流程
 
